@@ -1,0 +1,2 @@
+# earthshakes_warning
+easy
