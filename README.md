@@ -1,4 +1,5 @@
 # earthshakes_warning
 easy
 
-''' sss '''
+python -m venv venv 
+
