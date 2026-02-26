@@ -62,7 +62,7 @@ def get_and_transfer_api_data_to_s3(**context):
         INSTALL httpfs;
         LOAD httpfs;
         SET s3_url_style = 'path';
-        SET s3_endpoint = 'minio:9001';
+        SET s3_endpoint = 'minio:9000';
         SET s3_access_key_id = '{ACCESS_KEY}';
         SET s3_secret_access_key = '{SECRET_KEY}';
         SET s3_use_ssl = FALSE;
@@ -73,7 +73,7 @@ def get_and_transfer_api_data_to_s3(**context):
                 *
             FROM
                 read_csv_auto('https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime={start_date}&endtime={end_date}') AS res
-        ) TO 's3://minioprod/{LAYER}/{SOURCE}/{start_date}/{start_date}_00-00-00.gz.parquet';
+        ) TO 's3://prod/{LAYER}/{SOURCE}/{start_date}/{start_date}_00-00-00.gz.parquet';
 
         """,
     )
