@@ -20,9 +20,7 @@ DAG_ID = "raw_from_api_to_s3"
 LAYER = "raw"
 SOURCE = "earthquake"
 
-# S3
-#load_dotenv(dotenv_path="C:\Proga\earthshakes_warning\.env")
-#secret_key = os.getenv("secret_key")
+
 ACCESS_KEY = Variable.get("access_key")
 SECRET_KEY = Variable.get("secret_key")
 
