@@ -1,9 +1,5 @@
 import logging
 
-import os
-import dotenv
-from dotenv import load_dotenv
-from pathlib import Path
 import duckdb
 import pendulum
 from airflow import DAG
