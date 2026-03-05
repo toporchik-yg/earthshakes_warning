@@ -51,6 +51,12 @@ def get_dates(**context) -> tuple[str, str]:
 
 def get_and_transfer_raw_data_to_ods_pg(**context):
     """"""
+    #import duckdb
+
+    con = duckdb.connect()
+    con.execute("INSTALL httpfs;")  # DuckDB сам выберет правильный протокол
+    con.execute("LOAD httpfs;")
+
 
     start_date, end_date = get_dates(**context)
     logging.info(f"💻 Start load for dates: {start_date}/{end_date}")
